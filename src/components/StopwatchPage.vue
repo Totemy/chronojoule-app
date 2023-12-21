@@ -1,7 +1,7 @@
 <template>
     <div>
       <h1>Stopwatch</h1>
-      <p v-if="isRunning">Elapsed Time: {{ elapsedTime }} seconds</p>
+      Elapsed Time: {{ formattedTime.hours }} hours, {{ formattedTime.minutes }} minutes, {{ formattedTime.seconds }} seconds
       <button @click="startStopwatch" :disabled="isRunning">Start</button>
       <button @click="stopStopwatch" :disabled="!isRunning">Stop</button>
     </div>
@@ -15,6 +15,9 @@
       },
       isRunning() {
         return this.$store.state.isRunning;
+      },
+      formattedTime() {
+        return this.$store.getters.formattedTime;
       },
     },
     methods: {

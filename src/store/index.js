@@ -21,4 +21,17 @@ export default createStore({
       state.elapsedTime = 0;
     },
   },
+  getters: {
+    formattedTime: (state) => {
+      const hours = Math.floor(state.elapsedTime / 3600);
+      const minutes = Math.floor((state.elapsedTime % 3600) / 60);
+      const seconds = state.elapsedTime % 60;
+
+      return {
+        hours,
+        minutes,
+        seconds,
+      };
+    },
+  },
 });
