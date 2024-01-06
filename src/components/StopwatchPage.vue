@@ -1,9 +1,10 @@
 <template>
     <div>
       <h1>Stopwatch</h1>
-      Elapsed Time: {{ formattedTime.hours }} hours, {{ formattedTime.minutes }} minutes, {{ formattedTime.seconds }} seconds
+      Elapsed Time: {{ formattedTime.hours }} : {{ formattedTime.minutes }} : {{ formattedTime.seconds }} 
       <button @click="startStopwatch" :disabled="isRunning">Start</button>
       <button @click="stopStopwatch" :disabled="!isRunning">Stop</button>
+      <button @click="pauseStopwatch" :disabled="!isRunning">Pause</button>
     </div>
   </template>
   
